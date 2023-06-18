@@ -1,5 +1,6 @@
 import Expences from './components/Expenses/Expences'
 import './components/Expenses/Expences.css'
+import NewExpense from './components/NewExpense/NewExpense';
 import Card from './components/UI/Card'
 
 function App() {
@@ -25,9 +26,12 @@ function App() {
     },
   ];
 
+  function newExpense(expenseData) {
+    console.log(expenseData);
+  }
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onAddExpense={newExpense}/>
       <Card className='expenses'>
         <Expences 
           items={expenses}
